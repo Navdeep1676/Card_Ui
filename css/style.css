@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+iframe {
+    border: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+.row {
+    margin: 0px -15px;
+}
+
+.row:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    background-color: #bcc0c3
+}
+
+.wrap {}
+
+.wrapper {
+    width: 500px;
+    height: 380px;
+    background: white;
+    margin: 110px auto;
+    position: relative;
+    border-radius: 5px;
+}
+.rotate {
+    transform: rotateY(180deg);
+}
+.card {
+    position: absolute;
+    width: 420px;
+    height: 200px;
+    border-radius: 18px;
+    background-image: url(../images/cardback.png);
+    background-repeat: round;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    left: 40px;
+    top: -98px;
+
+}
+
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/cardfront.png);
+    background-repeat: round;
+    backface-visibility: hidden;
+}
+
+.form {
+    position: absolute;
+    top: 135px;
+    left: 20px;
+}
+
+#cardnum {
+    margin: 5px 0px;
+    width: 455px;
+    padding: 5px;
+
+
+}
+
+#cardname {
+    margin: 5px 0px;
+    width: 455px;
+    padding: 5px;
+
+
+}
+
+#exp1 {
+    margin: 5px 0px;
+    padding: 5px;
+    width: 90px;
+    margin-right: 15px;
+
+}
+
+#exp2 {
+    margin: 5px 0px;
+    padding: 5px;
+    width: 90px;
+
+}
+
+.cvnum {
+    position: absolute;
+    bottom: 89px;
+    left: 250px;
+}
+
+#cvv {
+    margin: 5px 0px;
+    width: 90px;
+    position: absolute;
+    padding: 5px;
+    top: 132px;
+    left: 250px;
+}
+
+.btn {
+    background-color: #0b63c4;
+    color: white;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 455px;
+    padding: 5px;
+    line-height: 20px;
+}
+
+.card-front ul {
+    position: absolute;
+    top: 105px;
+    left: 50px;
+}
+
+.card-front ul li {
+    float: left;
+    color: white;
+    font-size: 22px
+}
+
+.card-front ul:nth-child(2) li {
+    margin-top: 60px;
+}
+
+.card-front ul:nth-child(3) li {
+    margin-top: 37px;
+    margin-left: 156px;
+}
+
+.card-front ul:nth-child(3) li:nth-child(2) {
+    margin-top: -29px;
+    margin-left: 185px;
+}
+
+.card span {
+    color: black;
+    position: absolute;
+    top: 78px;
+    left: 30px;
+    transform: rotateY(180deg);
+}
+.onrotate{
+    backface-visibility: hidden;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

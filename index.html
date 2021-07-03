@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="row">
+                <div class="wrapper">
+                    <div class="card">
+                        <div class="card-front">
+                            <ul>
+                                <li>#### #### #### ####</li>
+                            </ul>
+                            <ul>
+                                <li>Navdeep Dahiya</li>
+                            </ul>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            
+                        </div>
+                        <span></span>
+                    </div>
+                    <div class="form">
+                        <form action="">
+                            <label for="cardnum">Card Number </label>
+                            <br>
+                            <input type="number" name="cardnum" id="cardnum" value="" autocomplete="off" onKeyPress="if(this.value.length==16) return false;">
+                            <br>
+                            <label for="CardName"> Card Name </label>
+                            <br>
+                            <input type="text" name="CardName" id="cardname" maxlength="25">
+                            <br>
+                            <label for=""> Expired Date </label>
+                            <br>
+                            <select name="ExpiredDate" id="exp1" class="exp">
+                                <option value="" selected>Month</option>
+                            </select>
+                            <select name="ExpiredDate" id="exp2" class="exp">
+                                <option value="" selected>Year</option>
+                            </select>
+
+                            <label for="cvv" class="cvnum"> CVV </label>
+                            <br>
+                            <input type="number" name="cvv1" id="cvv" onKeyPress="if(this.value.length==3) return false;">
+                            <button type="submit" class="btn">Submit</button>
+                        </form>
+                    </div>
+                    <script>
+                        for (var i = 1; i <= 12; i++) {
+                            document.querySelector("form #exp1").innerHTML += "<option>" + i + "</option>";
+                        }
+                        var year = new Date().getFullYear();
+                        for (var i = year; i <= 2030; i++) {
+                            document.querySelector("form #exp2").innerHTML += "<option>" + i + "</option>";
+                        }
+                        document.querySelector("form input[type=number]").onkeyup = function () {
+                            var x = this.value;
+                            document.querySelector(".card-front ul li").textContent=x;
+                        }
+                        document.querySelector("form #cardname").onkeyup = function () {
+                            var x = this.value;
+                            document.querySelector(".card-front ul:nth-child(2) li").textContent = x ;
+
+                        }
+                        document.querySelector("form #exp1").onchange = function () {
+                            var x = this.value;
+                           document.querySelector(".card-front ul:nth-child(3) li").textContent = x;
+
+                        }
+                        document.querySelector("form #exp2").onchange = function () {
+                            var x = this.value;
+                            document.querySelector(".card-front ul:nth-child(3) li:last-child").textContent = x;
+                        }
+                        var card = document.querySelector(".card")
+                        var add = document.querySelector("form #cvv");
+                        add.addEventListener('focus', () => {
+                            card.classList.add('rotate');
+                        });                        
+                        var card2=document.querySelector(".card-front");
+                            add.addEventListener('blur', () => {
+                            card.classList.add('rotate');
+                        });
+                        var card1 = document.querySelector(".card span");
+                        document.querySelector("form #cvv").onkeyup = function () {
+                            var y = this.value;
+                            card1.textContent=  y;
+                        }
+                        var card3=document.querySelector(".card span");
+                        document.querySelector("form #cvv").addEventListener('blur', () => {
+                            card.classList.remove('rotate');
+                            card3.classList.add('onrotate');
+                        });
+                        
+
+
+
+                       
+                    </script>
+                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                      <script>      
+                          $("#cardnum").focus(function(){
+                              $("ul:first li").css({
+                                 "border":"1px solid white",
+                                 "width":"200px",
+                                 "height":"30px",
+                                 "border-radius":"5px"
+
+
+                              })
+                              $("ul:nth-child(2) li").css({
+                                 "border":"none"
+                              })
+                          })
+                          
+                          $("#cardname").focus(function(){
+                              $("ul:nth-child(2) li").css({
+                                 "border":"1px solid white",
+                                 "width":"270px",
+                                 "height":"30px",
+                                 "border-radius":"5px"
+                              })
+                              $("ul:first li").css({
+                                 "border":"none"
+                              })
+                          })
+                          $(".exp").focus(function(){
+                              $("ul:nth-child(3) li:first ").css({
+                                 "border":"1px solid white",
+                                 "width":"80px",
+                                 "height":"30px",
+                                 "border-radius":"5px",
+                                 "padding-left":"5px"
+                              })
+                              $("ul:nth-child(2) li").css({
+                                 "border":"none"
+                              })
+                          })
+                          $(".exp").blur(function(){
+                              $("ul:nth-child(3) li:first").css({
+                                  "border":"none"
+                              })
+                          })
+                          
+                    
+                    </script>                     
+         
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
